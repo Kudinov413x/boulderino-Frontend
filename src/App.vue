@@ -1,11 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import BoulderCard from './views/BoulderView.vue'
+  import SandBox from './components/SandBox.vue'
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <BoulderCard />
+  <SandBox />
+  <h3>You did it!</h3>
 </template>
 
 <style scoped></style>
