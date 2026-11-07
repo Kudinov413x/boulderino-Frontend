@@ -1,4 +1,5 @@
 import { useAuthStore } from '@/stores/auth'
+import router from '@/router'
 
 const API_URL = 'http://localhost:8080'
 
@@ -32,6 +33,11 @@ async function request<T>(
 
         if (response.status === 401) {
             authStore.logout()
+            
+            // 2. User informieren und zur Startseite / Login leiten
+            alert('Deine Session ist abgelaufen. Bitte melde dich erneut an.')
+            router.push('/') 
+            
             throw new Error('Nicht autorisiert.')
         }
 

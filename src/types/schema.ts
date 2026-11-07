@@ -114,22 +114,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/frontend/test/FrontendTest": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["frontendTest"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/boulders": {
         parameters: {
             query?: never;
@@ -160,22 +144,6 @@ export interface paths {
         put?: never;
         /** Create a new attempt */
         post: operations["createAttempt"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/test/recalculate-progress": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["recalculateProgress"];
         delete?: never;
         options?: never;
         head?: never;
@@ -571,22 +539,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/test/auth": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["testAuthentication"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/api/auth/{id}": {
         parameters: {
             query?: never;
@@ -597,7 +549,7 @@ export interface paths {
         get?: never;
         put?: never;
         post?: never;
-        /** Delete an user */
+        /** Delete own user account */
         delete: operations["deleteUser"];
         options?: never;
         head?: never;
@@ -695,14 +647,6 @@ export interface components {
             name?: string;
             password?: string;
             email?: string;
-        };
-        FrontendTestDTO: {
-            username?: string;
-            maxGrade?: string;
-            /** Format: int32 */
-            totalTriedBoulders?: number;
-            /** Format: int32 */
-            totalToppedBoulders?: number;
         };
         BoulderCreateDTO: {
             name: string;
@@ -1427,26 +1371,6 @@ export interface operations {
             };
         };
     };
-    frontendTest: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "*/*": components["schemas"]["FrontendTestDTO"];
-                };
-            };
-        };
-    };
     getAllBoulders: {
         parameters: {
             query?: never;
@@ -1532,24 +1456,6 @@ export interface operations {
                 content: {
                     "*/*": components["schemas"]["Attempts"];
                 };
-            };
-        };
-    };
-    recalculateProgress: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
             };
         };
     };
@@ -2048,26 +1954,6 @@ export interface operations {
                 };
                 content: {
                     "*/*": components["schemas"]["HighlightResponseDTO"][];
-                };
-            };
-        };
-    };
-    testAuthentication: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "*/*": string;
                 };
             };
         };

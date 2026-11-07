@@ -7,7 +7,7 @@ import HomeView from '@/views/HomeView.vue'
 import BoulderView from '@/views/BoulderView.vue'
 import DashboardView from '@/views/DashboardView.vue'
 import AboutMeView from '@/views/AboutMeView.vue'
-import ImpressumView from '@/views/ImpressumView2.vue'
+import ImpressumView from '@/views/ImpressumView.vue'
 import DatenschutzView from '@/views/DatenschutzView.vue'
 
 
